@@ -194,6 +194,8 @@
 			git stash apply 恢复‘储藏’起来的分支，恢复之后用
 			git stash pop指令将之间保存的缓冲区删除
 
+			git push origin --delete <分支名>  #删除远端分支
+
 
 十二：使用git开发程序的常用思路
 	开发一个新feature，最好新建一个分支；如果要丢弃一个没有被合并过的分支，可以通过git branch -D <name>强行删除。
