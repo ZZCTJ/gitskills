@@ -1,7 +1,5 @@
 一：关于野火IMX6ULL开发板的介绍
-		它们的前身是 Freescale 旗下的产品，目前属于 NXP 公司，NXP 官方提供的资料包含 uboot、 Linux 内核的 Yocto 定制示例工程，完善的裸机SDK 软件库等，本书讲解主要采用的是 i.MX6ULL 系列处理器，它包含一个 Cortex-A7 内核，
-	如型号为MCIMX6Y2CVM08AB 的芯片， 它属于i.MX6ULL 系列，是主频为 792MHz、芯片封装为 BGA，尺寸为 14x14mm，焊盘间距为 0.8pitch 的工业级芯片。Cortex-A7 处理器的架构和功能集与 CortexA15 处理器大部分相同，单个 Cortex-A7 处理器的能源效率
-	是 ARM Cortex-A8 处理器的 5 倍，性能提升 50%，而尺寸仅为后者的五分之一。Cortex-A7架构处理器的应用场景已转移至低功耗嵌入式设备上，如可穿戴设备，IoT节点等。i.MX6系列处理器有Cortex-A9和Cortex-A7的不同型号，需要根据具体的应用场景进行选择。NXP 针对 MCU（微控制器）的应用场景，推出了 i.MX RT 系列跨界处理器,该处理器在 i.MX6 的 MPU（应用处理器）平台之上把其 Cortex-A 内核换成 Cortex-M 内核，使得它具备了应用处理器的高性能及丰富的功能，又具备传统微控制器的易用、实时及低功耗的特性。开发主机要用的是 Ubuntu 即可。至于在开发板上运行的 Linux 系统，也可以理解为这是我们针对特定板子而定制的 Linux 发行版，Ubuntu 衍生自 Debian，由于其易用性，可以说是最成功的 Linux 桌面版。即使是只进行 Linux 嵌入式开发工作，也避免不了需要使用 Windows 下的工具，如后期我们给开发板烧录 uboot、 Linux 内核时，使用到的 NXP 官方 MFGtools 工具时，还是依赖于 Windows 系统。
+	它们的前身是 Freescale 旗下的产品，目前属于 NXP 公司，NXP 官方提供的资料包含 uboot、 Linux 内核Yocto 定制示例工程，完善的裸机SDK 软件库等，本书讲解主要采用的是 i.MX6ULL 系列处理器，它包含一个 Cortex-A7 内核，如型号为MCIMX6Y2CVM08AB 的芯片， 它属于i.MX6ULL 系列，是主频为 792MHz、芯片封装为 BGA，尺寸为 14x14mm，焊盘间距为 0.8pitch 的工业级芯片。Cortex-A7 处理器的架构和功能集与 CortexA15 处理器大部分相同，单个 Cortex-A7 处理器的能源效率是 ARM Cortex-A8 处理器的 5 倍，性能提升 50%，而尺寸仅为后者的五分之一。Cortex-A7架构处理器的应用场景已转移至低功耗嵌入式设备上，如可穿戴设备，IoT节点等。i.MX6系列处理器有Cortex-A9和Cortex-A7的不同型号，需要根据具体的应用场景进行选择。NXP 针对 MCU（微控制器）的应用场景，推出了 i.MX RT 系列跨界处理器,该处理器在 i.MX6 的 MPU（应用处理器）平台之上把其 Cortex-A 内核换成 Cortex-M 内核，使得它具备了应用处理器的高性能及丰富的功能，又具备传统微控制器的易用、实时及低功耗的特性。开发主机要用的是 Ubuntu 即可。至于在开发板上运行的 Linux 系统，也可以理解为这是我们针对特定板子而定制的 Linux 发行版，Ubuntu 衍生自 Debian，由于其易用性，可以说是最成功的 Linux 桌面版。即使是只进行 Linux 嵌入式开发工作，也避免不了需要使用 Windows 下的工具，如后期我们给开发板烧录 uboot、 Linux 内核时，使用到的 NXP 官方 MFGtools 工具时，还是依赖于 Windows 系统。
 
 二：linux系统文件结构
 	目录 目录放置的内容
@@ -23,10 +21,10 @@
 	srv 一些网络服务所需要的数据文件
 	sys 同 proc 目录，用于记录 CPU 与系统硬件的相关信息
 	tmp 程序运行时产生的临时文件存放目录
-	usr 系统存放程序的目录，类似于在 windows 下的文件夹 programefiles
-	var 存放内容常变动的文件目录，如系统日志文件
-	以其中的/sys/class/leds/cpu 目录为例，它下面又包含 brightness、 device、max_brightness、 power、 subsystem、 trigger、 uevent 等文件。其中 brightness 表示 LED 灯的亮度， trigger 表示 LED 灯的触发方式，我们可以通过 echo、 cat 等命令来修改或查看这些文件，从而达到控制 LED 灯的目的。
-
+起来rogramefiles
+起来
+起来ightness、 device、max_brightness、 power、 起来表示 LED 灯的亮度， trigger 表示 LED 灯的触发方起来件，从而达到控制 LED 灯的目的。
+起来
 
 三：linux常用的指令
 	命令：
@@ -96,9 +94,6 @@
 	mount -o vers=4 172.168.0.177:/home/zhaozhichao/workdir /home/root/mountnfs #由于主机的IP地址会不断地变化，输入指令之前，先在pc后台输入ifconfig查看pc机的ip
 
 
-20200417
-
-
 
 九：以下就是linux应用开发的总体思想
 	{
@@ -154,70 +149,54 @@
 
 
 
+十一：git指令学习，了解git的工作区、版本库（暂存区、master）的关系。
+	创建版本库：
+		创建一个文件夹
+			mkdir learngit
+		切换到该文件夹下	      
+			cd learngit
+		一、初始化git 
+			git init
+		二、添加一个文件到git
+			先在learngit文件下建一个readme.txt文件，然后通过
+				（1）git add readme.txt    
+				（2）git commit -m "说明"
+        三、建立一个远程仓库，使本地仓库与远程仓库关联，具体做法（www.liaoxuefeng.com/wiki/896043488029600/898732864121440）,据体指令为：
+			git remote add origin git @github.com:ZZCTJ/learngit.git
+
+			再输入输入git push -u origin master后出现error: src refspec master does not match any.error: 无法推送一些引用到 'git@github.com:xxx/xxx.git'的情况时，可以在终端中输入
+			git pull --rebase origin master之后再输入git push -u origin master就可以把本地库的内容推送到远程，git push命令，实际上是把当前分支推送到远程。
+
+	常用的git指令：
+			git status查看当前仓库状态
+			git diff 查看本次修该与上次的不同
+			git log显示从最近到最远的提交日志
+			git log --pretty=oneline显示从最近到最远的提交日志（精简版）
+			git reflog 查看最近git操作记录，方便查找版本id号，恢复版本
+			git reset --hard HEAD^ 回滚到上一个版本
+			git reset --hard HEAD^^回滚到前两个版本
+			git reset --bard HEAD~100回滚到前100个版本
+			git reset --hard id号     回复到高版
+
+			git checkout -- <文件名.带后缀>：用于未git add时候，工作区文件恢复到前一刻状态
+			git reset HEAD <文件名。带后缀>：可以把暂存区的修改撤销掉，重新放回工作区。
+
+			git push origin master  本地代码推送指令，正好与下面指令相反
+			git clone git@github.com:ZZCTJ/gitskills.git 从远程仓库clone项目
+
+			git checkout -b dev建立分支，并且切换到分支上=git switch -c dev
+			git checkout master 切换到主线=git switch master
+			git merge dev 将dev分支的工作成果合并到master分支上
+			git branch -d <name删除分支
+
+			git stash' 用于将当前现场“储藏”起来，当有更高优先级的事情要去做的时候，类似于任务挂起，将当前分支的程序暂时存储起来
+			git stash list命令查看储藏的工作现场
+			git stash apply 恢复‘储藏’起来的分支，恢复之后用
+			git stash pop指令将之间保存的缓冲区删除
 
 
-创建版本库：
-	创建一个文件夹
-	      mkdir learngit
-	切换到该文件夹下	      
-	      cd learngit
-	一、初始化git 
-                      git init
-	二、添加一个文件到git
-     	      先在learngit文件下建一个readme.txt文件，然后通过
-    	    （1）git add readme.txt    
-   	    （2）git commit -m "说明"
-
-git status查看当前仓库状态
-git diff 查看本次修该与上次的不同
-git log显示从最近到最远的提交日志
-git log --pretty=oneline显示从最近到最远的提交日志（精简版）
-git reflog 查看最近git操作记录，方便查找版本id号，恢复版本
-git reset --hard HEAD^ 回滚到上一个版本
-git reset --hard HEAD^^回滚到前两个版本
-git reset --bard HEAD~100回滚到前100个版本
-git reset --hard id号     回复到高版
-
-了解git的工作区、版本库（暂存区、master）的关系。
-
-git checkout -- <文件名.带后缀>：用于未git add时候，工作区文件恢复到前一刻状态
-git reset HEAD <文件名。带后缀>：可以把暂存区的修改撤销掉，重新放回工作区。
-
-
-
-输入git push -u origin master后出现
-
-error: src refspec master does not match any.
-error: 无法推送一些引用到 'git@github.com:xxx/xxx.git'
-的情况时，可以在终端中输入
-
-git pull --rebase origin master
-
-之后再输入git push -u origin master
-
-git push origin master  本地代码推送指令，正好与下面指令相反
-
-git clone git@github.com:ZZCTJ/gitskills.git 从远程仓库clone项目
-
-git checkout -b dev建立分支，并且切换到分支上=git switch -c dev
-
-git checkout master 切换到主线=git switch master
-
-git merge dev 将dev分支的工作成果合并到master分支上
-
-git branch -d <name删除分支
-
-git stash' 用于将当前现场“储藏”起来
-
-
-git stash list命令查看储藏的工作现场
-git stash apply 恢复‘储藏’起来的分支，恢复之后用
-git stash pop指令将之间保存的缓冲区删除
-
-
-开发一个新feature，最好新建一个分支；
-
-如果要丢弃一个没有被合并过的分支，可以通过git branch -D <name>强行删除。
+十二：使用git开发程序的常用思路
+	开发一个新feature，最好新建一个分支；如果要丢弃一个没有被合并过的分支，可以通过git branch -D <name>强行删除。
 
 
 
