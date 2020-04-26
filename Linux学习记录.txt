@@ -202,9 +202,19 @@
 
 
 
+20200426
 
+1：关闭涂宁程序调试信息指令：echo 0 > /proc/net/rtl8821au/log_level
 
+2：挂载指令mount。（需要深入了解）
 
+3：lsusb 查看usb挂载情况
 
+4：ssh root@172.168.0.95  连接ssh
+
+5：mv *.h ~/src/captain/src/tcp/include   将当前路径下的.h文件复制粘贴到指定位置
+     mv *.c ~/src/captain/src/tcp/src       将当前路径下的.h文件复制粘贴到指定位置
+
+6：  ./tcp get 123.56.179.198 456 test  nullptr qqwry.dat        登录tcp远程服务器
 
 
