@@ -217,4 +217,16 @@
 
 6：  ./tcp get 123.56.179.198 456 test  nullptr qqwry.dat        登录tcp远程服务器
 
+7:bzero函数
+  strncpy函数
+  memset函数
+  fflush
+  atoi
+
+8:/*******挂载usb设备******************/
+   mount /dev/sda /mnt
+   mount /dev/sda1 /mnt
+   ls /mnt
+   ls /dev/sd*
+   cd /mnt/usb
 
